@@ -2,6 +2,18 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="roverCuriosityModel"
+            type="com.example.spaceworld.RoverModel" />
+        <variable
+            name="roverSpiritModel"
+            type="com.example.spaceworld.RoverModel" />
+        <variable
+            name="roverOpportunityModel"
+            type="com.example.spaceworld.RoverModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,12 +32,15 @@
                 android:id="@+id/roverCuriosity"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:roverModel="@{roverCuriosityModel}"
+                />
 
             <com.example.spaceworld.Rover
                 android:id="@+id/roverSpirit"
                 android:layout_width="400dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                />
 
             <com.example.spaceworld.Rover
                 android:id="@+id/roverOpportunity"

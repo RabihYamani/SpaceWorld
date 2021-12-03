@@ -1,6 +1,6 @@
-package com.example.spaceworld.Models
+package com.example.spaceworld
 
-data class Rover (
+data class RoverModel (
     val id: Int,
     val name: String,
     val launchDate: String= "12/12/12",
@@ -8,4 +8,6 @@ data class Rover (
     val maxDate: String = "12/12/12",
     val status: String = "active",
     val maxSol: Int =0,
-    val totalPhotoes: Int =0 )
+    val totalPhotos: Int =0,
+    val imageUrl: String =""
+)
