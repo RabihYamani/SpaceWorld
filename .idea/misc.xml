@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/rover.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/fragment_rovers_list.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/rover.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/sample_rover.xml" value="0.17806484295845998" />
       </map>
     </option>
