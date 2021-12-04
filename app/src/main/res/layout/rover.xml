@@ -7,7 +7,7 @@
     <data>
         <variable
             name="rover"
-            type="com.example.spaceworld.RoverModel" />
+            type="com.example.spaceworld.models.RoverModel" />
 
 
     </data>

@@ -6,13 +6,13 @@
     <data>
         <variable
             name="rover1"
-            type="com.example.spaceworld.RoverModel" />
+            type="com.example.spaceworld.models.RoverModel" />
         <variable
             name="rover2"
-            type="com.example.spaceworld.RoverModel" />
+            type="com.example.spaceworld.models.RoverModel" />
         <variable
             name="rover3"
-            type="com.example.spaceworld.RoverModel" />
+            type="com.example.spaceworld.models.RoverModel" />
 
         <variable
             name="screenWidth"
@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <com.example.spaceworld.Rover
+            <com.example.spaceworld.rover_list.Rover
                 android:id="@+id/roverCuriosity"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -42,7 +42,7 @@
                 app:screenWidth="@{screenWidth}"
                 />
 
-            <com.example.spaceworld.Rover
+            <com.example.spaceworld.rover_list.Rover
                 android:id="@+id/roverSpirit"
                 android:layout_width="400dp"
                 android:layout_height="match_parent"
@@ -50,7 +50,7 @@
                 app:screenWidth="@{screenWidth}"
                 />
 
-            <com.example.spaceworld.Rover
+            <com.example.spaceworld.rover_list.Rover
                 android:id="@+id/roverOpportunity"
                 android:layout_width="400dp"
                 android:layout_height="match_parent"

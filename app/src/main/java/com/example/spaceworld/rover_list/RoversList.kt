@@ -1,4 +1,4 @@
-package com.example.spaceworld
+package com.example.spaceworld.rover_list
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.example.spaceworld.R
 import com.example.spaceworld.databinding.FragmentRoversListBinding
+import com.example.spaceworld.models.RoverModel
+import com.example.spaceworld.repositories.RoverRepository
 
 class RoversList : Fragment() {
 
@@ -25,7 +28,7 @@ class RoversList : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_rovers_list , container , false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_rovers_list, container , false)
 
         if(!rovers.isNullOrEmpty()){
             binding.rover1= rovers?.get(0)

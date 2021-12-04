@@ -1,4 +1,4 @@
-package com.example.spaceworld
+package com.example.spaceworld.models
 
 import com.beust.klaxon.Json
 

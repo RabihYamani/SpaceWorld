@@ -1,8 +1,8 @@
-package com.example.spaceworld
+package com.example.spaceworld.repositories
 
-import android.util.Log
-import com.beust.klaxon.JsonReader
 import com.beust.klaxon.Klaxon
+import com.example.spaceworld.models.RoverModel
+import com.example.spaceworld.models.RoverPhotoModel
 import java.io.StringReader
 
 object RoverRepository {

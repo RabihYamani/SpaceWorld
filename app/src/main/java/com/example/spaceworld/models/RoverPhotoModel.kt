@@ -1,6 +1,7 @@
-package com.example.spaceworld
+package com.example.spaceworld.models
 
 import com.beust.klaxon.Json
+import com.example.spaceworld.models.RoverCameraModel
 
 data class RoverPhotoModel (
     val id: Int,

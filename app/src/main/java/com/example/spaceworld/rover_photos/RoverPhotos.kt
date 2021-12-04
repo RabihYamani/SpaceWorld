@@ -1,4 +1,4 @@
-package com.example.spaceworld
+package com.example.spaceworld.rover_photos
 
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spaceworld.PhotosAdapter
+import com.example.spaceworld.R
+import com.example.spaceworld.models.RoverModel
+import com.example.spaceworld.models.RoverPhotoModel
+import com.example.spaceworld.repositories.RoverRepository
 
 
 class RoverPhotos : Fragment() {
@@ -21,6 +26,10 @@ class RoverPhotos : Fragment() {
     ): View? {
 
         var view: View = inflater.inflate(R.layout.fragment_rover_photos, container, false)
+
+        val args = RoverPhotosArgs.fromBundle(arguments!!)
+        Log.v("abc", args.roverid.toString())
+
         rover= RoverRepository.getRovers()?.get(0)
 
         photos= RoverRepository.getPhotos(rover)

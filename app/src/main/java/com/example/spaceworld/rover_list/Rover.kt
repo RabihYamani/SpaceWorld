@@ -1,4 +1,4 @@
-package com.example.spaceworld
+package com.example.spaceworld.rover_list
 
 import android.content.Context
 import android.util.AttributeSet
@@ -7,7 +7,10 @@ import android.view.View
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.example.spaceworld.R
 import com.example.spaceworld.databinding.RoverBinding
+import com.example.spaceworld.models.RoverModel
 import com.squareup.picasso.Picasso
 
 
@@ -36,11 +39,13 @@ class Rover : ConstraintLayout {
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr){
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         mBinding = DataBindingUtil.inflate(inflater, R.layout.rover, this, true)
 
-
+        mBinding.button.setOnClickListener { view: View ->
+            view.findNavController().navigate(RoversListDirections.actionRoversListToRoverPhotos(roverModel?.id?:0))
+        }
     }
 
     fun renderImage(){

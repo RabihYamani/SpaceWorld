@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spaceworld.models.RoverPhotoModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.rover_photo_item.view.*
 
