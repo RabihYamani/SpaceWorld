@@ -131,8 +131,60 @@ object RoverRepository {
         val klaxon = Klaxon()
         val parsed = klaxon.parseJsonObject(StringReader(roverJSON))
         val dataArray = parsed.array<Any>("rovers")
-        Log.v("test", "" + dataArray?.toJsonString())
+//        Log.v("test", "" + dataArray?.toJsonString()) checking if it was reading the full array split
 
         return dataArray?.let { klaxon.parseFromJsonArray(it) }
+    }
+
+    fun getPhotos(rover: RoverModel?): ArrayList<RoverPhotoModel>?{
+        val photos: ArrayList<RoverPhotoModel> = ArrayList()
+        val camera: RoverCameraModel = RoverCameraModel(
+            20,
+            "FHAX",
+            "Front Hazard Avoidance Camera",
+            rover
+        )
+
+        photos.add(
+            RoverPhotoModel(
+            1,
+            100,
+            "26/11/2020",
+             "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
+                rover,
+                camera
+        )
+        )
+        photos.add(
+            RoverPhotoModel(
+                2,
+                200,
+                "02/01/2021",
+                "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
+                rover,
+                camera
+            )
+        )
+        photos.add(
+            RoverPhotoModel(
+                3,
+                300,
+                "23/11/2020",
+                "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
+                rover,
+                camera
+            )
+        )
+        photos.add(
+            RoverPhotoModel(
+                4,
+                400,
+                "29/11/2020",
+                "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG",
+                rover,
+                camera
+            )
+        )
+        return photos
     }
 }

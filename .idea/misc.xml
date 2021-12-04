@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/fragment_rover_photos.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/fragment_rovers_list.xml" value="0.24456521739130435" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/rover.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/rover_photo_item.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/SpaceWorld/app/src/main/res/layout/sample_rover.xml" value="0.17806484295845998" />
       </map>
     </option>
