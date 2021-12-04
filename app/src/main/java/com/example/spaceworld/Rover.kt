@@ -44,8 +44,13 @@ class Rover : ConstraintLayout {
     }
 
     fun renderImage(){
+        val images: HashMap<Int, String> = HashMap()
+        images.put(5, "https://www.science.org/do/10.1126/science.aan7004/abs/sn-curiosity.jpg")
+        images.put(7, "https://i.guim.co.uk/img/media/545dcd3ba148179e4f7724a7600e55b29bac07f1/0_150_2000_1200/master/2000.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=573b63b10bdca845c21f1963338940af")
+        images.put(6, "https://www.mercurynews.com/wp-content/uploads/2016/08/20111126_023011_marsrover600.jpg?w=640")
+
         var imageView: ImageView = findViewById(R.id.imageView3)
-        Picasso.get().load(roverModel?.imageUrl).into(imageView);
+        Picasso.get().load(images.get(roverModel?.id)).into(imageView);
     }
 }
 
