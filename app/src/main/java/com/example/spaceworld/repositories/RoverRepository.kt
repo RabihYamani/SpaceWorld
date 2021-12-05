@@ -1,8 +1,14 @@
 package com.example.spaceworld.repositories
 
+
+import android.util.Log
 import com.beust.klaxon.Klaxon
+import com.example.spaceworld.api.MarsApiService
 import com.example.spaceworld.models.RoverModel
 import com.example.spaceworld.models.RoverPhotoModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.StringReader
 
 object RoverRepository {
@@ -132,7 +138,23 @@ object RoverRepository {
 
         //  Read rovers from Json
 
-        val klaxon = Klaxon()
+//        val klaxon = Klaxon()
+//        val parsed = klaxon.parseJsonObject(StringReader(roverJSON))
+//        val dataArray = parsed.array<Any>("rovers")
+////        Log.v("test", "" + dataArray?.toJsonString()) checking if it was reading the full array split
+//
+//        return dataArray?.let { klaxon.parseFromJsonArray(it) }
+        MarsApiService.MarsApi.retrofitService.getRovers().enqueue(object : Callback<String>{
+            override fun onFailure(call: Call<String>, t:Throwable){
+                Log.v("abc", "Failure" +t.message)
+            }
+            override fun onResponse(call: Call<String>, response: Response<String>){
+                Log.v("abc", "Response" + response.body())
+                Log.v("abc", "isSuccesful" + response.isSuccessful)
+                Log.v("abc", "code: " + response.code())
+            }
+            })
+                val klaxon = Klaxon()
         val parsed = klaxon.parseJsonObject(StringReader(roverJSON))
         val dataArray = parsed.array<Any>("rovers")
 //        Log.v("test", "" + dataArray?.toJsonString()) checking if it was reading the full array split
@@ -149,5 +171,9 @@ object RoverRepository {
 
         return dataArray?.let { klaxon.parseFromJsonArray(it) }
 
+    }
+
+    fun getPhoto(photoId: Int): RoverPhotoModel? {
+        return getPhotos(null)?.get(0)
     }
 }
