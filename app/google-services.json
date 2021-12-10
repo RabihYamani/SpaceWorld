@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1065920429902",
+    "project_id": "spaceworld-a38b4",
+    "storage_bucket": "spaceworld-a38b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065920429902:android:7f2d243b725ebbab8c281f",
+        "android_client_info": {
+          "package_name": "com.example.spaceworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065920429902-cara6lvaimi1eer20ifq0cecigehbisj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.spaceworld",
+            "certificate_hash": "a7302653114ce5275e22696e6173b71b7ebcbb87"
+          }
+        },
+        {
+          "client_id": "1065920429902-pq74lnfqk2hgaq5fcphgcqi9avkeqt1b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUasuxqbTm7FUIssUYb4UawOTes1oAbm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065920429902-pq74lnfqk2hgaq5fcphgcqi9avkeqt1b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

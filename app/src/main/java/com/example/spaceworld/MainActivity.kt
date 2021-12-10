@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
+        supportFragmentManager.beginTransaction()
+            .add(R.id.navHostFragment, LoginFragment())
+            .commit()
     }
 
 }

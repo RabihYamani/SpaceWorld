@@ -1,9 +1,13 @@
 package com.example.spaceworld.api
 
+import com.example.spaceworld.models.RoverModel
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.nasa.gov/mars-photos/api/v1/"
 
@@ -24,4 +28,5 @@ interface MarsApiService{
     }
 
 }
+
 

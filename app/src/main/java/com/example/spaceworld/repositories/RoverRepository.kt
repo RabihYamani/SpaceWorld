@@ -165,12 +165,12 @@ object RoverRepository {
     fun getPhotos(rover: RoverModel?): List<RoverPhotoModel>?{
         val photos: ArrayList<RoverPhotoModel> = ArrayList()
 
+
         val klaxon = Klaxon()
         val parsed = klaxon.parseJsonObject(StringReader(roverPhotos))
         val dataArray = parsed.array<Any>("photos")
 
         return dataArray?.let { klaxon.parseFromJsonArray(it) }
-
     }
 
     fun getPhoto(photoId: Int): RoverPhotoModel? {
