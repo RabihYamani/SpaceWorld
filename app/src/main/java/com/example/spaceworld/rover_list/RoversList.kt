@@ -36,6 +36,8 @@ class RoversList : Fragment() {
             binding.rover3= rovers?.get(2)
         }
 
+//        var navPhotos = activity as FragmentNavigation
+//        navPhotos.navigateFrag(PhotoFragment(), false)
 
         val displayMetrics = DisplayMetrics()
     activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)

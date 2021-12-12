@@ -40,10 +40,12 @@ class Rover : ConstraintLayout {
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         mBinding = DataBindingUtil.inflate(inflater, R.layout.rover, this, true)
 
         mBinding.button.setOnClickListener { view: View ->
+
             view.findNavController().navigate(RoversListDirections.actionRoversListToRoverPhotos(roverModel?.id?:0))
         }
     }

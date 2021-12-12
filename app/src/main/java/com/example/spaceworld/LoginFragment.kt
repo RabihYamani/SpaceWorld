@@ -1,5 +1,6 @@
 package com.example.spaceworld
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.spaceworld.rover_list.Rover
 import com.example.spaceworld.rover_list.RoversList
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -48,6 +50,9 @@ class LoginFragment : Fragment() {
     password.text.toString()).addOnCompleteListener{
         task ->
         if(task.isSuccessful){
+
+//            val intent= Intent(context, Rover::class.java)
+//            startActivity(intent)
 
             var navHome = activity as FragmentNavigation
             navHome.navigateFrag(RoversList(), addToStack = true)
