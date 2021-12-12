@@ -7,13 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EdgeEffect
 import android.widget.EditText
 import android.widget.Toast
+import com.example.spaceworld.rover_list.RoversList
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlin.concurrent.timerTask
+import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_register.*
 
 
 class RegisterFragment : Fragment() {
@@ -48,12 +49,19 @@ class RegisterFragment : Fragment() {
     }
 
     private fun firebaseSignUp(){
+        btn_register_reg.isEnabled= false
+        btn_register_reg.alpha=0.5f
         fAuth.createUserWithEmailAndPassword(username.text.toString(),
             password.text.toString()).addOnCompleteListener{
             task ->
             if(task.isSuccessful){
-                Toast.makeText(context, "Register Successful", Toast.LENGTH_SHORT).show()
+
+                var navHome = activity as FragmentNavigation
+                navHome.navigateFrag(RoversList(), addToStack = true)
+               // Toast.makeText(context, "Register Successful", Toast.LENGTH_SHORT).show()
             }else {
+                btn_register_reg.isEnabled= true
+                btn_register_reg.alpha=1.0f
                 Toast.makeText(context,task.exception?.message, Toast.LENGTH_SHORT).show()
             }
         }
