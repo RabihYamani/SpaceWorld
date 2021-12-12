@@ -64,6 +64,8 @@ class RoversList : Fragment() {
             binding.viewPager.adapter = adapter
         }
 
+//        var navPhotos = activity as FragmentNavigation
+//        navPhotos.navigateFrag(PhotoFragment(), false)
 
 
         binding.navController = findNavController()
