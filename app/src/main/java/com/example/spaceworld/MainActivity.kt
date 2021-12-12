@@ -2,10 +2,11 @@ package com.example.spaceworld
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.example.spaceworld.models.RoverModel
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FragmentNavigation {
 
 //    private lateinit var binding: ActivityMainBinding
 
@@ -30,6 +31,18 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .add(R.id.navHostFragment, LoginFragment())
             .commit()
+    }
+
+    override fun navigateFrag(fragment: Fragment, addToStack: Boolean) {
+       val transaction = supportFragmentManager
+           .beginTransaction()
+           .replace(R.id.navHostFragment, fragment)
+
+        if(addToStack){
+            transaction.addToBackStack(null)
+        }
+        transaction.commit()
+
     }
 
 }
