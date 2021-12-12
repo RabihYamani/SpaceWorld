@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.spaceworld.models.RoverModel
 
 
-class MainActivity : AppCompatActivity()  {
+class MainActivity : AppCompatActivity(), FragmentNavigation {
 
 //    private lateinit var binding: ActivityMainBinding
 
@@ -27,23 +27,23 @@ class MainActivity : AppCompatActivity()  {
         setContentView(R.layout.activity_main)
 
 
-//
-//        supportFragmentManager.beginTransaction()
-//            .add(R.id.navHostFragment, LoginFragment())
-//            .commit()
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.navHostFragment, LoginFragment())
+            .commit()
     }
 
-//    override fun navigateFrag(fragment: Fragment, addToStack: Boolean) {
-//       val transaction = supportFragmentManager
-//           .beginTransaction()
-//           .replace(R.id.navHostFragment, fragment)
-//
-//        if(addToStack){
-//            transaction.addToBackStack(null)
-//        }
-//        transaction.commit()
+    override fun navigateFrag(fragment: Fragment, addToStack: Boolean) {
+        val transaction = supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.navHostFragment, fragment)
 
-//    }
+        if(addToStack){
+            transaction.addToBackStack(null)
+        }
+        transaction.commit()
+
+    }
 
 }
 
