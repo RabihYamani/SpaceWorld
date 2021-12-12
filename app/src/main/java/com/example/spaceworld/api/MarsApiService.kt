@@ -17,8 +17,16 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface MarsApiService{
-    @GET("rovers")
-    fun getRovers():
+    @GET("rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY")
+    fun getRoversCuriosity():
+            Call<String>
+
+    @GET("rovers/spirit/photos?sol=1000&api_key=DEMO_KEY")
+    fun getRoversSpirit():
+            Call<String>
+
+    @GET("rovers/opportunity/photos?sol=1000&api_key=DEMO_KEY")
+    fun getRoversOpportunity():
             Call<String>
 
     object MarsApi{

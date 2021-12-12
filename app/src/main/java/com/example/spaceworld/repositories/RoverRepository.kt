@@ -6,6 +6,8 @@ import com.beust.klaxon.Klaxon
 import com.example.spaceworld.api.MarsApiService
 import com.example.spaceworld.models.RoverModel
 import com.example.spaceworld.models.RoverPhotoModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -136,6 +138,26 @@ object RoverRepository {
 
     fun getRovers(): List<RoverModel>? {
 
+
+//        MarsApiService.MarsApi.retrofitService.getRovers().enqueue(object : Callback<String> {
+//            override fun onFailure(call: Call<String>, t: Throwable) {
+//                Log.v("abc", "Failure" + t.message)
+//            }
+//
+//            override fun onResponse(call: Call<String>, response: Response<String>) {
+//                Log.v("abc", "Response" + response.body())
+//                Log.v("abc", "isSuccesful" + response.isSuccessful)
+//                Log.v("abc", "code: " + response.code())
+//            }
+//        })
+        Log.e("yes i am enter there", "enter")
+        val klaxon = Klaxon()
+        val parsed = klaxon.parseJsonObject(StringReader(roverJSON))
+        val dataArray = parsed.array<Any>("rovers")
+//        Log.v("test", "" + dataArray?.toJsonString()) checking if it was reading the full array split
+
+        return dataArray?.let { klaxon.parseFromJsonArray(it) }
+
         //  Read rovers from Json
 
 //        val klaxon = Klaxon()
@@ -144,25 +166,10 @@ object RoverRepository {
 ////        Log.v("test", "" + dataArray?.toJsonString()) checking if it was reading the full array split
 //
 //        return dataArray?.let { klaxon.parseFromJsonArray(it) }
-        MarsApiService.MarsApi.retrofitService.getRovers().enqueue(object : Callback<String>{
-            override fun onFailure(call: Call<String>, t:Throwable){
-                Log.v("abc", "Failure" +t.message)
-            }
-            override fun onResponse(call: Call<String>, response: Response<String>){
-                Log.v("abc", "Response" + response.body())
-                Log.v("abc", "isSuccesful" + response.isSuccessful)
-                Log.v("abc", "code: " + response.code())
-            }
-            })
-                val klaxon = Klaxon()
-        val parsed = klaxon.parseJsonObject(StringReader(roverJSON))
-        val dataArray = parsed.array<Any>("rovers")
-//        Log.v("test", "" + dataArray?.toJsonString()) checking if it was reading the full array split
 
-        return dataArray?.let { klaxon.parseFromJsonArray(it) }
     }
 
-    fun getPhotos(rover: RoverModel?): List<RoverPhotoModel>?{
+    fun getPhotos(rover: RoverModel?): List<RoverPhotoModel>? {
         val photos: ArrayList<RoverPhotoModel> = ArrayList()
 
 

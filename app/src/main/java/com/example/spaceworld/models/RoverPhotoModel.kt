@@ -11,5 +11,7 @@ data class RoverPhotoModel (
     @Json(name= "img_src")
     val imgScr: String,
 //    val rover: RoverModel?,
-    val camera: RoverCameraModel
+    val camera: RoverCameraModel,
+    val rover: RoverModel,
+    val earth_date : String
         )

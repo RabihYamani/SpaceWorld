@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_roversList"
-            app:destination="@id/roversList" />
+            app:destination="@id/roversList"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/navigation"
+            app:popUpToInclusive="true"
+            />
 
     </fragment>
 

@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spaceworld.PhotosAdapter
 import com.example.spaceworld.R
 import com.example.spaceworld.models.RoverModel
 import com.example.spaceworld.models.RoverPhotoModel
+import com.example.spaceworld.repositories.GLOBAL_LIST
 import com.example.spaceworld.repositories.RoverRepository
+import kotlinx.coroutines.launch
 
 
 class RoverPhotos : Fragment() {
@@ -30,17 +33,22 @@ class RoverPhotos : Fragment() {
         val args = RoverPhotosArgs.fromBundle(arguments!!)
         Log.v("abc", args.roverid.toString())
 
-        rover= RoverRepository.getRovers()?.get(0)
+        lifecycleScope.launch {
+           // rover = RoverRepository.getRovers()?.get(0)
 
-        photos= RoverRepository.getPhotos(rover)
+          //  photos= RoverRepository.getPhotos(rover)
+            photos= GLOBAL_LIST
 
-        var rv_photos: RecyclerView = view.findViewById(R.id.rv_photos)
 
-        // set layout manager to grid layout photos in grid
-        rv_photos.layoutManager = GridLayoutManager(context,2)
+            val rv_photos: RecyclerView = view.findViewById(R.id.rv_photos)
+
+            // set layout manager to grid layout photos in grid
+            rv_photos.layoutManager = GridLayoutManager(context,2)
 // set adapter
 
-        rv_photos.adapter = PhotosAdapter(photos, context)
+            rv_photos.adapter = PhotosAdapter(photos, context)
+
+        }
 
         return view
     // Inflate the layout for this fragment

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.spaceworld.R
 import com.example.spaceworld.databinding.FragmentPhotoBinding
+import com.example.spaceworld.repositories.GLOBAL_LIST
 import com.example.spaceworld.repositories.RoverRepository
 import com.example.spaceworld.rover_photos.RoverPhotosArgs
 import com.squareup.picasso.Picasso
@@ -31,8 +32,9 @@ class PhotoFragment : Fragment() {
 
         val args = PhotoFragmentArgs.fromBundle(arguments!!)
 
-        val photo = RoverRepository.getPhoto(args.photoId)
+       // val photo = RoverRepository.getPhoto(args.photoId)
 
+        val photo = GLOBAL_LIST.findLast { it.id == args.photoId }
         binding.camera.text= photo?.camera?.name
         binding.date.text = photo?.date
         val picasso= Picasso.get()
